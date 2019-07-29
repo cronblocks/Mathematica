@@ -23,6 +23,6 @@ The library includes **_UnitConverter_** class to facilitate conversion of value
 
 ```csharp
 double result;
-result = UnitConverter.ConvertElectromagnetism(100, UnitConverter.ElectromagnetismConversionType.AMPERE_PER_METER_TO_OERSTED); // 1.256637061436
-result = UnitConverter.ConvertPower(100, UnitConverter.PowerConversionType.KILOWATT_TO_TON_REFRIGERATION);                     // 28.434516375
+result = UnitConverter.ConvertAngle(45, UnitConverter.AngleConversionType.DEGREE_TO_MIL);       // 800
+result = UnitConverter.ConvertArea(100, UnitConverter.AreaConversionType.ACRE_TO_SQUARE_METER); // 404687.3
 ```
