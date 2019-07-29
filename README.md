@@ -15,8 +15,8 @@ Supported operations/ operators are:
 * /, *
 * +, -
 * sin(x), cos(x), tan(x), sinh(x), cosh(x), tanh(x), asin(x), acos(x), atan(x)
-* cot(x), sec(x), csc(x) or cosec(x)
-* pow(x,y), loge(x), log10(x), log(N,base), sqrt(x), abs(x)
+* cot(x), sec(x), csc(x), cosec(x)
+* pow(x, y), loge(x), log10(x), log(N, base), sqrt(x), abs(x)
 
 ## Unit Conversion
 The library includes **_UnitConverter_** class to facilitate conversion of values from one unit to another.
