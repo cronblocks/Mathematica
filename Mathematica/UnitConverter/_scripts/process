@@ -1,0 +1,39 @@
+#!/bin/bash
+# Usage: ./process summary.txt[file containing units: in the format (from) (to) (factor); _(unitType)]
+
+conversionDir=_conversions
+testsDir=_tests
+
+if [ $# -ne 1 ]
+then
+	echo "Usage: $0 <units-list-file-name>|all"
+	exit 1
+fi
+
+if [ $1 == "all" ]
+then
+	echo "Doing all"
+	rm -rf $conversionDir
+	rm -rf $testsDir
+	
+	mkdir $conversionDir
+	mkdir $testsDir
+	
+	for file in `ls -a *.txt`
+	do
+		echo "------>> Processing \"$file\":"
+		dos2unix $file
+		cat $file | awk -f preProcessAndExpandFile.awk | awk -v "outDirConversion"="$conversionDir" -v "outDirTests"="$testsDir" -f generateFile.awk
+	done
+else
+	mkdir $conversionDir
+	mkdir $testsDir
+	
+	echo "------>> Processing \"$1\":"
+	dos2unix $1
+	cat $1 | awk -f preProcessAndExpandFile.awk | awk -v "outDirConversion"="$conversionDir" -v "outDirTests"="$testsDir" -f generateFile.awk
+fi
+
+
+
+

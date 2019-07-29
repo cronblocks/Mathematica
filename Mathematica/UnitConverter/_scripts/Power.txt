@@ -1,0 +1,23 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Power
+Btu_per_hour                 = 12000 * ton_refrigeration
+kilowatt                     = 3.5168525 * ton_refrigeration
+kilowatt                     = 1.055056 * Btu_per_second
+watt                         = 0.29307107 * Btu_per_hour
+foot_pounds_force_per_second = 550 * horsepower
+watt                         = 745.699872 * horsepower
+watt_electric                = 746 * horsepower
+watt                         = 1.3558179483314004 * foot_pound_force_per_second

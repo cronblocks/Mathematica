@@ -1,0 +1,26 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Pressure
+kilopascal = 101.325 * standard_atmosphere
+kilopascal = 100 * bar
+kilopascal = 0.1 * millibar
+kilopascal = 6.89475729318 * pound_force_per_sq_inch
+megapascal = 6.89475729318 * kilopound_force_per_sq_inch
+kilopascal = 0.04788025898 * pound_force_per_sq_foot
+kilopascal = 3.38638 * inch_of_mercury_32_F
+kilopascal = 2.98898 * foot_of_water_39p2_F
+kilopascal = 0.249082 * inch_of_water_39p2_F
+kilopascal = 0.13332236842108 * millimeter_of_mercury_32_F
+pascal     = 133.3224 * torr

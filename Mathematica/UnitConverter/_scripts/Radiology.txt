@@ -1,0 +1,22 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Radiology
+megabecquerel        = 37000 * curie
+gray                 = 0.01 * rad
+sievert              = 0.01 * rem
+millisievert         = 10 * rem
+millisievert         = 0.01 * millirem
+microsievert         = 10 * millirem
+coulomb_per_kilogram = 0.000258 * roentgen

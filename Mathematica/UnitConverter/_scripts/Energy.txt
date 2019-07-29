@@ -1,0 +1,22 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Energy
+megajoule = 3.6 * kilowatthour
+joule     = 4.184 * calorie_physics
+kilojoule = 4.1868 * calorie_nutrition
+kilojoule = 1.0550559 * Btu
+megajoule = 105.4804 * therm_US
+megajoule = 2.68451953689 * horsepower_hour
+joule     = 1.35581794829 * foot_pound_force

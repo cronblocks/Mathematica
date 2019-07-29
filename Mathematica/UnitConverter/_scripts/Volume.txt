@@ -1,0 +1,30 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Volume
+cubic_meter      = 1233.4818375475 * acre_foot
+US_gallons       = 42.007926023778 * barrel_oil
+cubic_meter      = 0.1589873 * barrel_oil
+liter            = 158.9873 * barrel_oil
+cubic_meter      = 0.764554857984 * cubic_yard
+cubic_meter      = 0.02831685 * cubic_foot
+liter            = 28.316846592 * cubic_foot
+cubic_meter      = 0.002359737 * board_foot
+cubic_meter      = 2.8316846592 * register_ton
+cubic_meter      = 0.03523907 * bushel
+liter            = 3.785412 * gallon
+liter            = 0.9463529 * quart_liquid
+liter            = 0.4731765 * pint_liquid
+milliliter       = 29.5735295625 * fluid_ounce
+cubic_centimeter = 16.387064 * cubic_inch

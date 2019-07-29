@@ -1,0 +1,18 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Acceleration
+meter_per_second_squared = 0.0254 * inch_per_second_squared
+meter_per_second_squared = 0.3048 * foot_per_second_squared
+meter_per_second_squared = 9.80665 * standard_acceleration_of_gravity

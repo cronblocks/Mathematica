@@ -1,0 +1,22 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Light
+nanometer            = 0.1 * angstrom
+candela_per_sq_meter = 3183.098861838 * lambert
+candela_per_sq_meter = 1550.003100006 * candela_per_sq_inch
+candela_per_sq_meter = 3.4262591 * footlambert
+lux                  = 10.7639104167 * lumen_per_sq_foot
+lux                  = 10000 * phot
+lux                  = 10.7639104167 * footcandle

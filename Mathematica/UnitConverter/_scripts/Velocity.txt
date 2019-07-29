@@ -1,0 +1,18 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Velocity
+meter_per_second   = 0.3048 * foot_per_second
+kilometer_per_hour = 1.609344 * mile_per_hour
+kilometer_per_hour = 1.852 * knot

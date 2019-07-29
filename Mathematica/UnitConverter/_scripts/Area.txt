@@ -1,0 +1,23 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Area
+square_meter      = 4046.873 * acre
+hectare           = 0.4046873 * acre
+square_millimeter = 0.000506707479 * circular_mil
+square_centimeter = 6.4516 * square_inch
+square_millimeter = 645.16 * square_inch
+square_meter      = 0.09290304 * square_foot
+square_meter      = 0.83612736 * square_yard
+square_kilometer  = 2.5899885 * square_mile

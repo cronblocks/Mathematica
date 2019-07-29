@@ -1,0 +1,21 @@
+###############################################################################
+# This file describes conversion table in the following format:
+#
+# _ConversionType     : Initial letter shoul be kept capital;
+#                       as the Function Name will be generated from it.
+#
+# Conversion formulae : In the following format;
+#                       (= and * are ignored, they are only here for
+#                        formatting, and should be there to delimit
+#                        the values)
+#
+#    UnitTo = ConversionMultiplicationFactor * UnitFrom
+###############################################################################
+
+_Electromagnetism
+ampere_per_meter  = 79.57747154594 * oersted
+nanoweber         = 10 * maxwell
+millitesla        = 0.1 * gauss
+coulomb           = 3600 * ampere_hour
+nanoohm_meter     = 1.662426 * ohm_circular_mil_per_foot
+siemens_per_meter = 100 * mho_per_centimeter
