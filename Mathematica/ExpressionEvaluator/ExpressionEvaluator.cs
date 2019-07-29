@@ -246,25 +246,24 @@ namespace Mathematica
                         switch(funcName)
                         {
                             // Two argument functions pow(x, y), log(N, base) are handled separately
-                            case "sin":    result = Math.Sin(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);    break;
-                            case "cos":    result = Math.Cos(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);    break;
-                            case "tan":    result = Math.Tan(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);    break;
-                            case "cot":    result = 1 / Math.Tan(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1); break;
-                            case "sec":    result = 1 / Math.Cos(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1); break;
-                            case "csc":    result = 1 / Math.Sin(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1); break;
-                            case "cosec":  result = 1 / Math.Sin(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1); break;
-                            case "asin":   result = Math.Asin(arg1); if (angle_type == AngleType.DEGREE) result *= 180 / Math.PI;   break;
-                            case "acos":   result = Math.Acos(arg1); if (angle_type == AngleType.DEGREE) result *= 180 / Math.PI;   break;
-                            case "atan":   result = Math.Atan(arg1); if (angle_type == AngleType.DEGREE) result *= 180 / Math.PI;   break;
-                            case "sinh":   result = Math.Sinh(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);   break;
-                            case "cosh":   result = Math.Cosh(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);   break;
-                            case "tanh":   result = Math.Tanh(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);   break;
-                            case "logn":   result = Math.Log(arg1);     break;
-                            case "log10":  result = Math.Log10(arg1);   break;
-                            case "sqrt":   result = Math.Sqrt(arg1);    break;
-                            case "abs":    result = Math.Abs(arg1);     break;
-                            default:
-                                break;
+                            case "sin":   result = Math.Sin(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);       break;
+                            case "cos":   result = Math.Cos(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);       break;
+                            case "tan":   result = Math.Tan(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);       break;
+                            case "cot":   result = 1 / Math.Tan(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);   break;
+                            case "sec":   result = 1 / Math.Cos(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);   break;
+                            case "csc":   result = 1 / Math.Sin(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);   break;
+                            case "cosec": result = 1 / Math.Sin(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);   break;
+                            case "asin":  result = Math.Asin(arg1); if (angle_type == AngleType.DEGREE) result *= 180 / Math.PI; break;
+                            case "acos":  result = Math.Acos(arg1); if (angle_type == AngleType.DEGREE) result *= 180 / Math.PI; break;
+                            case "atan":  result = Math.Atan(arg1); if (angle_type == AngleType.DEGREE) result *= 180 / Math.PI; break;
+                            case "sinh":  result = Math.Sinh(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);      break;
+                            case "cosh":  result = Math.Cosh(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);      break;
+                            case "tanh":  result = Math.Tanh(angle_type == AngleType.DEGREE ? arg1 * Math.PI / 180 : arg1);      break;
+                            case "logn":  result = Math.Log(arg1);                                                               break;
+                            case "log10": result = Math.Log10(arg1);                                                             break;
+                            case "sqrt":  result = Math.Sqrt(arg1);                                                              break;
+                            case "abs":   result = Math.Abs(arg1);                                                               break;
+                            default:                                                                                             break;
                         }
 
                         if (result == double.NaN) throw new Exception("The result of computations is NaN.");
