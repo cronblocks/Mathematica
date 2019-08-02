@@ -20,10 +20,11 @@ namespace Mathematica
                                       "pow", "logn", "log10", "log", "sqrt", "abs", "pi", "e" };
 
         private static int MAX_PARSING_ITERATIONS = 100;
+
         /******************************************************************
          * This function evaluates the result of provided expression in
          * string format. The expression may contain following symbols
-         * (in precedence):
+         * (in order of precedence):
          * 1. [], {}, ()
          * 2. sin(x), cos(x), tan(x), sinh(x), cosh(x), tanh(x), asin(x), acos(x), atan(x)
          * 3. cot(x), sec(x), csc(x) or cosec(x) ___more being included___
@@ -60,7 +61,7 @@ namespace Mathematica
 
                 if(iterCount++ >= MAX_PARSING_ITERATIONS)
                 {
-                    throw new ArgumentException("Max iterations reached, please check for syntax and try reducing your expression.");
+                    throw new ArgumentException($"Max iterations({MAX_PARSING_ITERATIONS}) reached, please check for syntax and try reducing your expression.");
                 }
             } while (expr.CharCount('[') + expr.CharCount('{') + expr.CharCount('(') + expr.CharCount('_') > 0);
             
