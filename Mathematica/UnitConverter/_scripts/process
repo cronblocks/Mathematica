@@ -1,5 +1,5 @@
 #!/bin/bash
-# Usage: ./process summary.txt[file containing units: in the format (from) (to) (factor); _(unitType)]
+# Usage: ./process summary.txt[file containing units]
 
 conversionDir=_conversions
 testsDir=_tests
