@@ -12,7 +12,7 @@ fi
 
 if [ $1 == "all" ]
 then
-	echo "Doing all"
+	echo "Processing all unit files"
 	rm -rf $conversionDir
 	rm -rf $testsDir
 	
