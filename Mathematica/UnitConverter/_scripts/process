@@ -1,5 +1,16 @@
 #!/bin/bash
-# Usage: ./process summary.txt[file containing units]
+
+###############################################################################################
+# 
+# About:
+#     Created By:   Usama
+#     Remarks:      Unit conversion code generator by processing unit information files
+# 
+# 
+# Usage:
+#     ./process filename[file containing units]
+# 
+#########
 
 conversionDir=_conversions
 testsDir=_tests
