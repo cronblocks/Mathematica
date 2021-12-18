@@ -103,44 +103,48 @@ namespace Mathematica
                 match = match.NextMatch();
             }
 
-            // Sanitizing the string format
-            sanitizee = Regex.Replace(sanitizee, @"[+] *[+]*", " + ");         // Multiple signs
+            // Sanitizing the string
+            sanitizee = Regex.Replace(sanitizee, @"[+] *[+]*", " + ");             // multiple signs
             sanitizee = Regex.Replace(sanitizee, @"[-] *[-]*", " - ");
             sanitizee = Regex.Replace(sanitizee, @"[*] *[*]*", " * ");
             sanitizee = Regex.Replace(sanitizee, @"[/] *[/]*", " / ");
             sanitizee = Regex.Replace(sanitizee, @"[,] *[,]*", " , ");
-            sanitizee = Regex.Replace(sanitizee, @"\. *\.+", ".");
-                // multiple "."
-            sanitizee = Regex.Replace(sanitizee, @"[\n\r\t\v\b\e\f\a_]+", " "); // unwanted chars in input
-            sanitizee = Regex.Replace(sanitizee, @"[\[][. ,+*/-]*[\]]", ""); // Removing empty braces
+            sanitizee = Regex.Replace(sanitizee, @"\. *\.+", ".");                 // multiple "."
+            sanitizee = Regex.Replace(sanitizee, @"[\n\r\t\v\b\e\f\a_]+", " ");    // unwanted chars in input
+            sanitizee = Regex.Replace(sanitizee, @"[\[][. ,+*/-]*[\]]", "");       // Removing empty braces
             sanitizee = Regex.Replace(sanitizee, @"[\{][. ,+*/-]*[\}]", "");
             sanitizee = Regex.Replace(sanitizee, @"[\(][. ,+*/-]*[\)]", "");
+
             for (int i = 0; i < supportedFunctionality.Count; i++) // converting functions into tokens
             {
                 if (supportedFunctionality[i] == "e")
                 {
-                    sanitizee = Regex.Replace(sanitizee, supportedFunctionality[i],
-                                                         " (" + Constants.e + ") ", RegexOptions.IgnoreCase);
+                    sanitizee = Regex.Replace(
+                        sanitizee, supportedFunctionality[i],
+                        " (" + Constants.e + ") ", RegexOptions.IgnoreCase);
                 }
                 else if (supportedFunctionality[i] == "pi")
                 {
-                    sanitizee = Regex.Replace(sanitizee, supportedFunctionality[i],
-                                                         " (" + Constants.PI + ") ", RegexOptions.IgnoreCase);
+                    sanitizee = Regex.Replace(
+                        sanitizee, supportedFunctionality[i],
+                        " (" + Constants.PI + ") ", RegexOptions.IgnoreCase);
                 }
                 else
                 {
-                    sanitizee = Regex.Replace(sanitizee, supportedFunctionality[i] + " *([\\(\\[\\{])",
-                                                         " _" + (i + 1) + "_ $1", RegexOptions.IgnoreCase);
+                    sanitizee = Regex.Replace(
+                        sanitizee, supportedFunctionality[i] + " *([\\(\\[\\{])",
+                        " _" + (i + 1) + "_ $1", RegexOptions.IgnoreCase);
                 }
             }
-            sanitizee = Regex.Replace(sanitizee, @"\s+", " ").Trim();          // removing whitespaces
-            sanitizee = Regex.Replace(sanitizee, @"^-([\(\{\[])", "-1 * $1");  // leading "-" sign
+
+            sanitizee = Regex.Replace(sanitizee, @"\s+", " ").Trim();            // removing whitespaces
+            sanitizee = Regex.Replace(sanitizee, @"^-([\(\{\[])", "-1 * $1");    // leading "-" sign
             sanitizee = Regex.Replace(sanitizee, @"([\(\{\[]) *-", "$1-1 * ");
             sanitizee = Regex.Replace(sanitizee, @"[+*/-]$", "");
             sanitizee = Regex.Replace(sanitizee, @"^[+*/]$", "");
-            sanitizee = Regex.Replace(sanitizee, @" \. ", " * ");               // "." as * operation
-            sanitizee = Regex.Replace(sanitizee, @"([0-9])\. ", "$1.0 ");   // adding trailing "0"
-            sanitizee = Regex.Replace(sanitizee, @"\s\.([0-9])", " 0.$1");   // adding leading "0"
+            sanitizee = Regex.Replace(sanitizee, @" \. ", " * ");                // "." as * operation
+            sanitizee = Regex.Replace(sanitizee, @"([0-9])\. ", "$1.0 ");        // adding trailing "0"
+            sanitizee = Regex.Replace(sanitizee, @"\s\.([0-9])", " 0.$1");       // adding leading "0"
             sanitizee = Regex.Replace(sanitizee, @"([0-9\)\}\]])\s*([\[\{\(])", "$1 * $2"); // implicit multiplication
             sanitizee = Regex.Replace(sanitizee, @"([\]\}\)])\s*([0-9\(\{\[])", "$1 * $2");
 
