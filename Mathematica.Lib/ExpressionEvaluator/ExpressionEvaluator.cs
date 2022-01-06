@@ -115,7 +115,8 @@ namespace Mathematica
             sanitizee = Regex.Replace(sanitizee, @"[\{][. ,+*/-]*[\}]", "");
             sanitizee = Regex.Replace(sanitizee, @"[\(][. ,+*/-]*[\)]", "");
 
-            for (int i = 0; i < supportedFunctionality.Count; i++) // converting functions into tokens
+            // Converting functions into tokens
+            for (int i = 0; i < supportedFunctionality.Count; i++)
             {
                 if (supportedFunctionality[i] == "e")
                 {
@@ -177,7 +178,7 @@ namespace Mathematica
             return sanitizee;
         }
 
-        // This simplifies all the braces except of the form of (x,y) used for special functions
+        // Simplifies all the braces except of the form of (x,y) used for special functions
         private static string Solve01ValueBraces(this string expression)
         {
             string solution = Regex.Replace(expression, @"\s+", " ").Trim();
@@ -186,7 +187,7 @@ namespace Mathematica
             {
                 solution = Regex.Replace(solution, @"[\(\{\[][0-9. +*/-]*[\]\}\)]",
                     new MatchEvaluator(match =>
-                   {
+                    {
                         return SolveBasicMath(match.Value.Substring(1, match.Value.Length - 2)).ToString();
                     }));
             }
@@ -194,7 +195,7 @@ namespace Mathematica
             return solution;
         }
 
-        // This simplifies all the braces of the form of (x+z,y+q) used for special functions
+        // Simplifies all the braces of the form of (x+z,y+q) used for special functions
         private static string Solve02ValueBraces(this string expression)
         {
             string solution = Regex.Replace(expression, @"\s+", " ").Trim();
