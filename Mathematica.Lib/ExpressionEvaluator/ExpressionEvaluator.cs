@@ -13,7 +13,7 @@ namespace Mathematica
         public enum AngleType { DEGREE, RADIAN };
         private static AngleType angle_type;
 
-        // Should be in order to avoid next term having same text as some previous term
+        // Avoid previous term being sub-text of any term coming later in sequence
         private static List<string> supportedFunctionality = new List<string>() {
                                       "asin", "acos", "atan", "sinh", "cosh", "tanh",
                                       "sin", "cosec", "cos", "tan", "cot", "sec", "csc", 
