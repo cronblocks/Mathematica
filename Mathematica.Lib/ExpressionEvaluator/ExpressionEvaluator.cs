@@ -16,6 +16,7 @@ namespace Mathematica
         //- 
         //- Avoid any previous term being sub-text of any term coming later in the sequence.
         //-     e.g., "sin" should be placed after "asin".
+        //- 
         private static List<string> supportedFunctionality = new List<string>() {
                                       "asin", "acos", "atan", "sinh", "cosh", "tanh",
                                       "sin", "cosec", "cos", "tan", "cot", "sec", "csc", 
