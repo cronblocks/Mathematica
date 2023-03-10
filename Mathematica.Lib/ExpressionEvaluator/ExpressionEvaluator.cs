@@ -24,15 +24,17 @@ namespace Mathematica
         private static int MAX_PARSING_ITERATIONS = 100;
 
         /******************************************************************
-         * This function evaluates the result of provided expression in
+         * This function evaluates to get the result of provided expression in
          * string format. The expression may contain following symbols
-         * (in order of precedence):
-         * 1. [], {}, ()
-         * 2. sin(x), cos(x), tan(x), sinh(x), cosh(x), tanh(x), asin(x), acos(x), atan(x)
-         * 3. cot(x), sec(x), csc(x) or cosec(x) ___more being included___
-         * 4. pow(x,y), loge(x), log10(x), log(N,base), sqrt(x), abs(x)
-         * 5. /, *
-         * 6. +, -
+         * (in the order of precedence):
+         * 
+         *     1.   [], {}, ()
+         *     2.   sin(x), cos(x), tan(x), sinh(x), cosh(x), tanh(x), asin(x), acos(x), atan(x)
+         *     3.   cot(x), sec(x), csc(x) or cosec(x) ___more being included___
+         *     4.   pow(x,y), loge(x), log10(x), log(N,base), sqrt(x), abs(x)
+         *     5.   /, *
+         *     6.   +, -
+         * 
          ******************************************************************/
         public static double Evaluate(string expression)
         {
